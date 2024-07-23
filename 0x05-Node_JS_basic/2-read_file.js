@@ -12,25 +12,26 @@ const countStudents = (dataPath) => {
     .split('\n');
 
   fileLines.shift();
-  
+
   console.log(`Number of students: ${fileLines.length}`);
 
   const fields = {};
 
-  for (const line of fileLines){
-    data = line.split(',');
+  for (const line of fileLines) {
+    const data = line.split(',');
     const field = data[3].trim();
     const name = data[0];
-    if (Object.keys(fields).includes(field))
-      fields[field].push(name)
-    else
+    if (Object.keys(fields).includes(field)) {
+      fields[field].push(name);
+    } else {
       fields[field] = [name];
+    }
   }
 
   console.log(fields);
 
-  for (const field of Object.keys(fields)){
-    console.log(`Number of students in ${field}: ${fields[field].length}. ${fields[field].join(', ')}`)
+  for (const field of Object.keys(fields)) {
+    console.log(`Number of students in ${field}: ${fields[field].length}. ${fields[field].join(', ')}`);
   }
 };
 
