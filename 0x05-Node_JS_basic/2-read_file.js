@@ -13,8 +13,6 @@ const countStudents = (dataPath) => {
 
   fileLines.shift();
 
-  console.log(`Number of students: ${fileLines.length}`);
-
   const fields = {};
 
   for (const line of fileLines) {
@@ -28,8 +26,7 @@ const countStudents = (dataPath) => {
     }
   }
 
-  console.log(fields);
-
+  console.log(`Number of students: ${fileLines.length}`);
   for (const field of Object.keys(fields)) {
     console.log(`Number of students in ${field}: ${fields[field].length}. ${fields[field].join(', ')}`);
   }
