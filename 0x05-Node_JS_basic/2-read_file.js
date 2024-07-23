@@ -32,6 +32,6 @@ function countStudents(dataPath) {
   for (const field of Object.keys(fields)) {
     console.log(`Number of students in ${field}: ${fields[field].length}. ${fields[field].join(', ')}`);
   }
-};
+}
 
 module.exports = countStudents;
